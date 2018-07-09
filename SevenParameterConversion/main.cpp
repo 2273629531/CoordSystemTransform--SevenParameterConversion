@@ -6,7 +6,7 @@ using namespace coord;
 
 int main(){
 
-	//这里的七参数随便写的，改成你自己的七参数
+	//这里的七参数随便写的，改成你自己的七参数。
 	Trans trans(-8.5, 28, 14.8888, 0.888, -1.9999, 3.1111, -4.22222,coord::WGS84,coord::XIAN80);
 	Point pt(108.635229183, 26.111425709, 0);
 	Point result = trans.geodetic2plane(pt, 6378137, 6356752.314, 6378140, 6356755.2882, 1 / 298.257, 6);
