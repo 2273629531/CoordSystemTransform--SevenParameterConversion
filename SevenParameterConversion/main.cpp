@@ -6,7 +6,7 @@ using namespace coord;
 
 int main(){
 
-	//ÕâÀïµÄÆß²ÎÊıËæ±ãĞ´µÄ£¬¸Ä³ÉÄã×Ô¼ºµÄÆß²ÎÊı¡£
+	//è¿™é‡Œçš„ä¸ƒå‚æ•°æ˜¯éšæœºçš„ï¼Œè¯·ä¿®æ”¹æˆè‡ªå·±éœ€è¦çš„ä¸ƒå‚æ•°
 	Trans trans(-8.5, 28, 14.8888, 0.888, -1.9999, 3.1111, -4.22222,coord::WGS84,coord::XIAN80);
 	Point pt(108.635229183, 26.111425709, 0);
 	Point result = trans.geodetic2plane(pt, 6378137, 6356752.314, 6378140, 6356755.2882, 1 / 298.257, 6);
@@ -20,17 +20,17 @@ int main(){
 	cout.precision(12);
 	cout.setf(ios::fixed);
 
-	cout << "ÊäÈë" << EllipsoidParamArray[trans.getOriginCoordSystem()].name <<"×ø±ê£º"<<
-	pt.x << "£¬" << pt.y << "£¬" << pt.z << endl;
-	cout << "¾­Æß²ÎÊı×ª»»" << endl;
-	cout << "Êä³ö" << EllipsoidParamArray[trans.getResultCoordSystem()].name << "×ø±ê£º" <<
-		result.x << "£¬" << result.y << "£¬" << result.z << endl << endl;
+	cout << "è¾“å…¥" << EllipsoidParamArray[trans.getOriginCoordSystem()].name <<"åæ ‡: "<<
+	pt.x << ", " << pt.y << ", " << pt.z << endl;
+	cout << "ç»ä¸ƒå‚æ•°è½¬æ¢" << endl;
+	cout << "è¾“å‡º" << EllipsoidParamArray[trans.getResultCoordSystem()].name << "åæ ‡ï¼š"<<
+		result.x << "ï¼Œ" << result.y << "ï¼Œ" << result.z << endl << endl;
 	
-	cout << "ÊäÈë" << EllipsoidParamArray[trans2.getOriginCoordSystem()].name << "×ø±ê£º" <<
-		pt1.x << "£¬" << pt1.y << "£¬" << pt1.z << endl ;
-	cout << "¾­Æß²ÎÊı×ª»»" << endl;
-	cout << "Êä³ö" << EllipsoidParamArray[trans2.getResultCoordSystem()].name << "×ø±ê£º" <<
-		result1.x << "£¬" << result1.y << "£¬" << result1.z << endl << endl;
+	cout << "è¾“å…¥" << EllipsoidParamArray[trans2.getOriginCoordSystem()].name << "åæ ‡ï¼š" <<
+		pt1.x << "ï¼Œ" << pt1.y << "ï¼Œ" << pt1.z << endl ;
+	cout << "ç»ä¸ƒå‚æ•°è½¬æ¢" << endl;
+	cout << "è¾“å‡º" << EllipsoidParamArray[trans2.getResultCoordSystem()].name << "åæ ‡ï¼šê£º" <<
+		result1.x << "ï¼Œ" << result1.y << "ï¼Œ" << result1.z << endl << endl;
 
 	system("pause");
 
