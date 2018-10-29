@@ -1,9 +1,4 @@
-# CoordSystemTransform使用说明
- 
-## CoordSystemTransform
-
-## 效果截图
-<div align=center><img src="http://www.lgwimonday.cn/cosyblog/wordpress/wp-content/uploads/2018/07/2018070903435979.jpg" alt="CoordSystemTransform效果截图"/></div>
+# CoordSystemTransform
 
 ## 使用说明
 
