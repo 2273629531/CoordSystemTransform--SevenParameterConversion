@@ -8,7 +8,7 @@
 #define M_PI 3.14159265358979323846
 #define DEFFAULT_LONTITUDE -9999
 using namespace std;
-
+//在所有的标准库函数命名空间std中进行定义，避免发生重命名的问题
 
 namespace coord {
 	/**
