@@ -2,7 +2,7 @@
 // Created by LGW on 2017/5/11.
 //
 #pragma once
-
+//避免同一个头文件被include多次
 #include <math.h>
 #include <string>
 #define M_PI 3.14159265358979323846
