@@ -1,6 +1,8 @@
 //
 // Created by LGW on 2017/5/11.
 //
+// Modified by Matthew 2018/10/29.
+//
 #pragma once
 //避免同一个头文件被include多次
 //但是这种方法只是针对文件，而不是指内容相同的两个文件，并且不能跨平台，有的编译器并不支持，到时要改成#ifndef
