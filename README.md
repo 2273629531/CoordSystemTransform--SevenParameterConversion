@@ -1,9 +1,6 @@
 # CoordSystemTransform使用说明
-<div align=center><img src="http://www.lgwimonday.cn/cosyblog/wordpress/wp-content/uploads/2018/05/201805011453266-300x300.png" alt="阿拉灯Aladeng"/></div>
  
 ## CoordSystemTransform
-
-CoordSystemTransform这款工具由"[阿拉灯Aladeng](http://www.lgwimonday.cn)"编写，项目上传至Github分享，所有源码都可以下载和修改。CoordSystemTransform采用了七参数转换原理，对GIS中不同坐标系统中的坐标数据进行**毫米级**转换，转换精度相当高。当然，由于保密原因，七参数需要用户自己提供，七参数具体计算方法参照[5分钟快速计算七参数](http://www.lgwimonday.cn/archives/1265)。本项目中使用的七参数为测试数据，不是实际七参数。CoordSystemTransform将各个转换过程进行了分割，并将使用接口暴露出来，用户可根据需要自由组合转换过程，每个接口及参数在代码中都有详细注释。
 
 ## 效果截图
 <div align=center><img src="http://www.lgwimonday.cn/cosyblog/wordpress/wp-content/uploads/2018/07/2018070903435979.jpg" alt="CoordSystemTransform效果截图"/></div>
@@ -80,10 +77,4 @@ CoordSystemTransform这款工具由"[阿拉灯Aladeng](http://www.lgwimonday.cn)
    ```
 
    **注意**：步骤1和2添加的变量顺序要对应
-
-## PS
-
-- [5分钟快速计算七参数](http://www.lgwimonday.cn/archives/1265)
-
-更多内容敬请关注 **[阿拉灯Aladeng](http://www.lgwimonday.cn)**
 
