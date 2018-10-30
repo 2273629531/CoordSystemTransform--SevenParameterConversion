@@ -65,14 +65,14 @@ Point Trans::spatial2geodetic(Point pt, double a, double f)
 
 Point Trans::gaussPrj_geodetic2plane(Point point, double a, double b,double f, int ZoneWide, int Lo)
 {
-	//¼ÆËãÖĞÑë¾­ÏßºÍ´øºÅ
+	//è®¡ç®—å¸¦å·å’Œä¸­å¤®ç»çº¿ç»åº¦
 	int ProjNo = 0;
-	if (Lo == DEFFAULT_LONTITUDE)//Î´ÊäÈëÖĞÑë¾­Ïß
+	if (Lo == DEFFAULT_LONTITUDE)//å¦‚æœæ²¡æœ‰è¾“å…¥ä¸­å¤®ç»çº¿
 	{
-		ProjNo = ((int)point.x) / 6 + 1;//´øºÅ
-		Lo = (ProjNo)* ZoneWide - ZoneWide / 2;//ÖĞÑë¾­Ïß
+		ProjNo = ((int)point.x) / 6 + 1;//6åº¦å¸¦å¸¦å·
+		Lo = (ProjNo)* ZoneWide - ZoneWide / 2;//ä¸­å¤®ç»çº¿
 	}
-	else{//ÓÃ»§ÊäÈëÁËÖĞÑë¾­Ïß
+	else{//ç”¨æˆ·è¾“å…¥äº†ä¸­å¤®ç»çº¿
 		ProjNo = (Lo + ZoneWide / 2) / ZoneWide;
 	}
 	double longitude1, latitude1, longitude0, X0, Y0, xval, yval;
@@ -102,28 +102,28 @@ Point Trans::gaussPrj_geodetic2plane(Point point, double a, double b,double f, i
 
 //Point Trans::gaussPrj_geodetic2plane(Point point, double a, double b, double f,int ZoneWide, int Lo)
 //{
-//	//¼ÆËãÖĞÑë¾­ÏßºÍ´øºÅ
+//	//è®¡ç®—ä¸­å¤®ç»çº¿å’Œå¸¦å·
 //	int ProjNo = 0;
-//	if (Lo == DEFFAULT_LONTITUDE)//Î´ÊäÈëÖĞÑë¾­Ïß
+//	if (Lo == DEFFAULT_LONTITUDE)//æ²¡æœ‰è¾“å…¥ä¸­å¤®ç»çº¿
 //	{
-//		ProjNo = ((int)point.x) / 6 + 1;//´øºÅ
-//		Lo = (ProjNo)* ZoneWide - ZoneWide / 2;//ÖĞÑë¾­Ïß
+//		ProjNo = ((int)point.x) / 6 + 1;//å…­åº¦å¸¦å¸¦å·
+//		Lo = (ProjNo)* ZoneWide - ZoneWide / 2;//ä¸­å¤®ç»çº¿
 //	}
-//	else{//ÓÃ»§ÊäÈëÁËÖĞÑë¾­Ïß
+//	else{//ç”¨æˆ·è¾“å…¥ä¸­å¤®ç»çº¿
 //		ProjNo = (Lo + ZoneWide / 2) / ZoneWide;
 //	}
 //
 //	double L = toRadians(point.x), B = toRadians(point.y);
 //
 //
-//	//¸¨ÖúÁ¿
+//	//è¾…åŠ©é‡
 //	double cosB = cos(B);
 //	double sinB = sin(B);
 //	double cosB_2 = cosB * cosB;
 //	double l = L - toRadians(Lo);
 //	double ll = l * l;
 //
-//	//¼ÆËãÏµÊı
+//	//è®¡ç®—ç³»æ•°
 //	double t = tan(B);
 //	double e1 = sqrt((a * a - b * b) / (b * b));
 //	double eta = e1 * cos(B);
@@ -136,7 +136,7 @@ Point Trans::gaussPrj_geodetic2plane(Point point, double a, double b,double f, i
 //	double a3 = (0.3333333 + 0.001123 * cosB_2) * cosB_2 - 0.1666667;
 //	double a5 = 0.00878 - (0.1702 - 0.20382 * cosB_2) * cosB_2;
 //
-//	//¼ÆËã¸ßË¹Æ½Ãæ×ø±êÖµ
+//	//è®¡ç®—é«˜æ–¯å¹³é¢åæ ‡
 //	double x = 6367452.1328 * B - (a0 - (0.5 + (a4 + a6 * ll) * ll) * ll * N) * cosB * sinB;
 //	double y = (1 + (a3 + a5 * ll) * ll) * l * N * cosB;
 //
@@ -159,18 +159,18 @@ Point Trans::gaussInversePrj_plane2geodetic(Point point, double a, double f, int
 	double e1, e2, ee, NN, T, C, M, D, R, u, fai, iPI;
 	iPI = 0.0174532925199433; //3.1415926535898/180.0;
 
-	if (Lo == DEFFAULT_LONTITUDE)//Î´ÊäÈëÖĞÑë¾­Ïß
+	if (Lo == DEFFAULT_LONTITUDE)//æœªè¾“å…¥ä¸­å¤®ç»çº¿
 	{
-		ProjNo = (int)(X / 1000000L); //´øºÅ
-		longitude0 = (ProjNo)* ZoneWide - ZoneWide / 2;//ÖĞÑë¾­Ïß
+		ProjNo = (int)(X / 1000000L); //å¸¦å·
+		longitude0 = (ProjNo)* ZoneWide - ZoneWide / 2;//ä¸­å¤®ç»çº¿
 	}
-	else{//ÓÃ»§ÊäÈëÁËÖĞÑë¾­Ïß
+	else{//ç”¨æˆ·è¾“å…¥äº†ä¸­å¤®ç»çº¿
 		ProjNo = (Lo + ZoneWide / 2) / ZoneWide;
 		longitude0 = Lo;
 	}
 
 
-	longitude0 = longitude0 * iPI; //ÖĞÑë¾­Ïß
+	longitude0 = longitude0 * iPI; //ä¸­å¤®ç»çº¿
 
 	X0 = ProjNo * 1000000L + 500000L;
 	Y0 = 0;
@@ -188,10 +188,10 @@ Point Trans::gaussInversePrj_plane2geodetic(Point point, double a, double f, int
 	NN = _a / sqrt(1.0 - e2 * sin(fai) * sin(fai));
 	R = _a * (1 - e2) / sqrt((1 - e2 * sin(fai) * sin(fai)) * (1 - e2 * sin(fai) * sin(fai)) * (1 - e2 * sin(fai) * sin(fai)));
 	D = xval / NN;
-	//¼ÆËã¾­¶È(Longitude) Î³¶È(Latitude)
+	//è®¡ç®—ç»åº¦(Longitude)çº¬åº¦(Latitude)
 	longitude1 = longitude0 + (D - (1 + 2 * T + C) * D * D * D / 6 + (5 - 2 * C + 28 * T - 3 * C * C + 8 * ee + 24 * T * T) * D * D * D * D * D / 120) / cos(fai);
 	latitude1 = fai - (NN * tan(fai) / R) * (D * D / 2 - (5 + 3 * T + 10 * C - 4 * C * C - 9 * ee) * D * D * D * D / 24 + (61 + 90 * T + 298 * C + 45 * T * T - 256 * ee - 3 * C * C) * D * D * D * D * D * D / 720);
-	//×ª»»Îª¶È DD
+	//è½¬æ¢ä¸ºåº¦ DD
 	Point resultPt;
 	resultPt.x = (longitude1 / iPI);
 	resultPt.y = (latitude1 / iPI);
