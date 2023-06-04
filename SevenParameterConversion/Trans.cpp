@@ -201,7 +201,7 @@ Point Trans::gaussInversePrj_plane2geodetic(Point point, double a, double f, int
 
 Point Trans::geodetic2plane(Point point, double a_origin, double b_origin, double a_result, double b_result, double f_result, int ZoneWide, int Lo)
 {
-	return gaussPrj_geodetic2plane(spatial2geodetic(qicanshu(geodetic2spatial(point, a_origin, b_origin)), a_result, f_result), a_result, b_result,f_result,6);
+	return gaussPrj_geodetic2plane(spatial2geodetic(qicanshu(geodetic2spatial(point, a_origin, b_origin)), a_result, f_result), a_result, b_result,f_result,ZoneWide,Lo);
 
 }
 
